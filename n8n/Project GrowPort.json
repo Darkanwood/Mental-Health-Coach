@@ -1,0 +1,507 @@
+{
+  "name": "Project GrowPort",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "6dee0e83-840a-4185-9503-a7568cc09faa",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -608,
+        32
+      ],
+      "id": "7820315d-847d-4a6a-8b41-bebdfa280edb",
+      "name": "Webhook",
+      "webhookId": "6dee0e83-840a-4185-9503-a7568cc09faa"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// Nachricht aus dem Webhook holen\nconst message = ($json.body?.message || '').toString().trim();\n\n// einfache Demo-User-ID\nconst userId = 'demo-user-1';\n\n// vorerst feste Session-ID (später vom Frontend mitgeben)\nconst sessionId = '00000000-0000-0000-0000-000000000001';\n\n// Testkonstante für das beenden einer Seesion\nconst endSession = $json.body?.endSession\n\nreturn {\n  userMessage: message,\n  userId,\n  sessionId,\n  endSession,\n};\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -368,
+        32
+      ],
+      "id": "0c64f292-d124-4c49-a0c3-4e7077bb9b1a",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1488,
+        -176
+      ],
+      "id": "d12d276c-f373-48aa-b9e6-51ef7f243562",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "={{ $json.systemPrompt }}"
+            },
+            {
+              "content": "={{ $json.finalUserPrompt }}\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2,
+      "position": [
+        864,
+        16
+      ],
+      "id": "6192bf58-d498-45ad-a2e3-b9c4c498a786",
+      "name": "Message a model",
+      "credentials": {
+        "openAiApi": {
+          "id": "03AqdKBi1eVVOJMS",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  '{{$node[\"Code in JavaScript\"].json.userId}}'        AS user_id,\n  '{{$node[\"Code in JavaScript\"].json.userMessage}}'   AS user_message,\n  '{{$node[\"Code in JavaScript\"].json.sessionId}}'     AS session_id,\n  \n  -- Wenn der innere SELECT null zurückgibt, also der erste Kontakt, dann wird der leere String ausgegeben\n  COALESCE(\n    (\n  \n  --Sortiert die Einträge chronologisch, älteste zuerst\n      SELECT string_agg(role || ': ' || content, E'\\n' ORDER BY created_at)\n      FROM (\n        SELECT *\n        FROM chat_message\n        WHERE user_id   = '{{$node[\"Code in JavaScript\"].json.userId}}'\n          AND session_id = '{{$node[\"Code in JavaScript\"].json.sessionId}}'\n        ORDER BY created_at DESC\n        LIMIT 50\n      ) t\n    ),\n  \n  -- Ausgabe wenn SELECT Null ausgibt\n    ''\n  ) AS history;\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        416,
+        16
+      ],
+      "id": "21ccca49-74d8-41c6-97b1-39ae31ccd092",
+      "name": "Execute a SQL query",
+      "credentials": {
+        "postgres": {
+          "id": "xCIK4zwQc0ASWvWt",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const userId      = $json.user_id\nconst userMessage = $json.user_message;\nconst sessionId   = $json.session_id;\nconst history     = $json.history || '';\n\n// System-Prompt mit späterer Memory-Erweiterung\nconst systemPrompt = `\nDu bist ein persönlicher Coaching-Assistent.\nDu antwortest klar, freundlich, direkt und ausschließlich auf Deutsch.\nDu stellst gezielte Fragen, regst zum Nachdenken an und hilfst dem Nutzer,\npersönliche Ziele strukturiert zu erreichen.\n`;\n\n// Langzeit-Gedächtnis aus Execute a SQL query5 holen\nconst longTermSummary = $item(0).$node['Execute a SQL query5'].json.summary || '';\n\nconst longTermContext = longTermSummary\n  ? `Letzter Stand aus vorherigen Sitzungen:\\n${longTermSummary}\\n\\n`\n  : '';\n\n// Bisheriger Verlauf (falls vorhanden)\nconst conversationContext = history\n  ? `Bisheriger Verlauf:\\n${history}\\n\\n`\n  : '';\n\nconst finalUserPrompt =\n  `${conversationContext}` +\n  `Neue Nachricht vom Nutzer:\\n` +\n  `User: ${userMessage}\\n` +\n  `Bitte antworte als Coach.` + \n  conversationContext;\n\n// an OpenAI weitergeben\nreturn {\n  userId,\n  userMessage,\n  sessionId,\n  systemPrompt,\n  finalUserPrompt,\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        640,
+        16
+      ],
+      "id": "43cbdff6-fd7c-47cb-a45c-1782de89a0a3",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO chat_message (user_id, session_id, role, content)\nVALUES\n  ('{{$json.userId}}',    '{{$json.sessionId}}', 'user',      '{{$json.userMessage}}'),\n  ('{{$json.userId}}',    '{{$json.sessionId}}', 'assistant', '{{$json.assistantText}}');\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1488,
+        16
+      ],
+      "id": "ca6726df-8305-4dbb-8e0b-0c174750b26c",
+      "name": "Execute a SQL query1",
+      "credentials": {
+        "postgres": {
+          "id": "xCIK4zwQc0ASWvWt",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const sessionId = $('Code in JavaScript1').item.json.sessionId;\nconst userId = $('Code in JavaScript1').item.json.userId;\nconst userMessage = $('Code in JavaScript1').item.json.userMessage;\n\n// LLM output:\nconst assistantText = $json.output[0].content[0].text;\n\nreturn {\n  reply: assistantText,\n  userId,\n  sessionId,\n  userMessage,\n  assistantText,\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1216,
+        16
+      ],
+      "id": "2902f20a-9b83-425f-974b-831e5ab4e887",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "bf97dab1-8ae4-4ff3-b42b-b8298d89e49b",
+              "leftValue": "={{ $json.endSession }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        144,
+        32
+      ],
+      "id": "eb1a789c-b57a-4f22-9894-23f4413bb144",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const userId      = $json.user_id;\nconst sessionId   = $json.session_id;\nconst fullHistory = $json.full_history || '';\n\nconst summaryPrompt = `\nFasse die folgende Coaching-Unterhaltung in maximal 3 Sätzen zusammen.\nFokussiere dich auf:\n- zentrale Themen / Probleme\n- Ziele des Nutzers\n- wichtige Entscheidungen oder Erkenntnisse.\n\nUnterhaltung:\n${fullHistory}\n`;\n\nreturn {\n  userId,\n  sessionId,\n  summaryPrompt,\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        512,
+        416
+      ],
+      "id": "9f65e2b3-6391-40cf-9bdb-de148c05b549",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4.1-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "Du bist ein Assistent, der Coaching-Gespräche kurz und strukturiert zusammenfasst.\n"
+            },
+            {
+              "content": "={{ $json.summaryPrompt }}\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2,
+      "position": [
+        720,
+        416
+      ],
+      "id": "c587abb4-dd2d-4236-a994-0312e8e8dacd",
+      "name": "Message a model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "03AqdKBi1eVVOJMS",
+          "name": "OpenAi account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const userId    = $('Code in JavaScript3').item.json.userId;\nconst sessionId = $('Code in JavaScript3').item.json.sessionId;\n\n// LLM-Text (Simplify Output)\nconst summary   = $json.text;\n\nreturn {\n  userId,\n  sessionId,\n  summary,\n};\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1072,
+        416
+      ],
+      "id": "2b66770b-ebf1-4707-91cb-72e50d0affa1",
+      "name": "Code in JavaScript4"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT\n  '{{$json.userId}}'    AS user_id,\n  '{{$json.sessionId}}' AS session_id,\n  COALESCE(\n    (\n      SELECT string_agg(role || ': ' || content, E'\\n' ORDER BY created_at)\n      FROM chat_message\n      WHERE user_id   = '{{$json.userId}}'\n        AND session_id = '{{$json.sessionId}}'\n    ),\n    ''\n  ) AS full_history;\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        320,
+        416
+      ],
+      "id": "348cdf99-e49d-4041-bedb-e68ec7fa3e29",
+      "name": "Execute a SQL query2",
+      "credentials": {
+        "postgres": {
+          "id": "xCIK4zwQc0ASWvWt",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Summary speichern\nINSERT INTO user_memory (user_id, session_id, summary)\nVALUES ('{{$json.userId}}', '{{$json.sessionId}}', '{{$json.summary}}');\n\n-- Kurzzeitgedächtnis der Session löschen\nDELETE FROM chat_message\nWHERE user_id   = '{{$json.userId}}'\n  AND session_id = '{{$json.sessionId}}';\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1280,
+        416
+      ],
+      "id": "62ffcc70-6f16-433d-bbf1-e98bc89007c4",
+      "name": "Execute a SQL query3",
+      "credentials": {
+        "postgres": {
+          "id": "xCIK4zwQc0ASWvWt",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "{\n  \"reply\": \"Danke für das Gespräch. Ich habe mir die wichtigsten Punkte gemerkt.\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1488,
+        416
+      ],
+      "id": "26c9af34-8789-4e98-acac-7a9d3d792ce9",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT COALESCE(\n  (\n    SELECT summary\n    FROM user_memory\n    WHERE user_id = '{{$json.userId}}'\n    ORDER BY created_at DESC\n    LIMIT 1\n  ),\n  ''\n) AS summary;\n\nDELETE FROM user_memory\nWHERE user_id = '{{$json.userId}}';",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        -128,
+        32
+      ],
+      "id": "bb24ae3b-1a7d-42d7-b73f-659017134073",
+      "name": "Execute a SQL query5",
+      "credentials": {
+        "postgres": {
+          "id": "xCIK4zwQc0ASWvWt",
+          "name": "Postgres account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query1": {
+      "main": [
+        []
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute a SQL query2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Message a model1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript4": {
+      "main": [
+        [
+          {
+            "node": "Execute a SQL query3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute a SQL query5": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3457e162-0182-48fd-bc21-06080713ac07",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8606273417b3ee362be131f42dc27db632da967c8b65e74dc8d987b641d6a155"
+  },
+  "id": "uhqIQUOThINtrNtO",
+  "tags": []
+}
