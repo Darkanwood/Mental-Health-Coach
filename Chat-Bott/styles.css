@@ -59,3 +59,22 @@ button {
   font-size: 0.9em;
   color: #666;
 }
+
+/* 3D-Gehirn Container */
+#brain-container {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Canvas im Gehirn-Container */
+#brain-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+

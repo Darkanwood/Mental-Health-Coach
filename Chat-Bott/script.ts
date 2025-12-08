@@ -51,9 +51,10 @@ function addMessage(text: string, sender: Sender): void {
 // Funktion: sendMessage (asynchron)
 // --------------------------------------
 // Diese Funktion wird aufgerufen, wenn der Nutzer eine Nachricht sendet.
-// 1. Nachricht im Chat anzeigen
-// 2. Nachricht an dein Backend senden (fetch)
-// 3. Antwort anzeigen oder Fehler behandeln
+// 1. Gehirn-Stimmung setzen
+// 2. Nachricht im Chat anzeigen
+// 3. Nachricht an dein Backend senden (fetch)
+// 4. Antwort anzeigen oder Fehler behandeln
 async function sendMessage(): Promise<void> {
 
   // Text aus dem Inputfeld holen
@@ -62,6 +63,12 @@ async function sendMessage(): Promise<void> {
   // Leere Eingaben ignorieren
   if (!text) return;
 
+  // >>> Gehirn-Stimmung setzen, falls Funktion aus dem 3D-Skript existiert
+  const moodFn = (window as any).setBrainMoodFromText;
+  if (typeof moodFn === 'function') {
+    moodFn(text);
+  }
+
   // Nachricht des Users direkt im Chat anzeigen
   addMessage(text, 'user');
 
@@ -69,7 +76,7 @@ async function sendMessage(): Promise<void> {
   inputEl.value = '';
 
   // Statusanzeige aktualisieren
-  statusEl.textContent = 'Denke nach...';
+  statusEl.textContent = 'Denke nach.';
 
   try {
     // Anfrage an das Backend senden (POST)
@@ -116,6 +123,7 @@ async function sendMessage(): Promise<void> {
 
 
 
+
 // --------------------------------------
 // Event Listener
 // --------------------------------------
@@ -142,7 +150,7 @@ const WEBHOOK_URL = "DEIN_N8N_WEBHOOK";  // <- unbedingt eintragen
 
 const endBtn = document.getElementById("end-session-btn");
 
-// 🛑 Button zum manuellen Beenden
+// Button zum manuellen Beenden
 if(endBtn){
 endBtn.addEventListener("click", () => {
   
@@ -162,7 +170,7 @@ endBtn.addEventListener("click", () => {
 }
 
 
-// 🛑 Automatisches Beenden beim Tab-Schließen
+// Automatisches Beenden beim Tab-Schließen
 window.addEventListener("beforeunload", () => {
   const payload = JSON.stringify({
     endSession: true,

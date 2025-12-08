@@ -5,15 +5,16 @@
   <title>Minimaler AI Chat</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <h2>AI Agent Chat (Minimal-Version)</h2>
 
+  <!-- 3D Gehirn -->
+  <div id="brain-container"></div>
+
   <div id="chat"></div>
 
-  <button id="end-session-btn" style="margin-top: 10px;">
-  Chat beenden
- </button>
-
+  <button id="end-session-btn" style="margin-top: 10px;">Chat beenden</button>
 
   <div id="input-row">
     <input type="text" id="user-input" placeholder="Schreib etwas..." />
@@ -22,7 +23,261 @@
 
   <div id="status"></div>
 
-  <!-- Wichtig: hier bleibt JavaScript, nicht TypeScript -->
+    <!-- Chat-Logik -->
   <script src="script.js"></script>
+
+
+      <!-- 3D Gehirn -->
+  <script type="module">
+    import * as THREE from "https://esm.sh/three@0.161.0";
+    import { GLTFLoader } from "https://esm.sh/three@0.161.0/examples/jsm/loaders/GLTFLoader.js";
+
+    const container = document.getElementById("brain-container");
+    const width = container.clientWidth;
+    const height = container.clientHeight || 300;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x818387);
+
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.set(0, 0, 4);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(width, height);
+    container.appendChild(renderer.domElement);
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(4, 4, 4);
+    scene.add(light);
+
+    // ===== Mood-Farben (wie zuvor) =====
+    const moodColors = {
+      neutral: { color: 0xffa0c0, emissive: 0x000000, intensity: 0.0 },
+      angry:   { color: 0xff4444, emissive: 0xff0000, intensity: 1.5 },
+      sad:     { color: 0x7777ff, emissive: 0x0000ff, intensity: 1.0 },
+      happy:   { color: 0xffffaa, emissive: 0xffff00, intensity: 1.2 },
+      focused: { color: 0x88ffd2, emissive: 0x00ffaa, intensity: 1.0 }
+    };
+
+    // ===== Bewegungs-Profile je Stimmung =====
+    const moodMotion = {
+      neutral: { rotSpeed: 0.003, pulseAmp: 0.0,  pulseFreq: 0.0 },
+      angry:   { rotSpeed: 0.012, pulseAmp: 0.06, pulseFreq: 4.0 },
+      sad:     { rotSpeed: 0.0015, pulseAmp: 0.03, pulseFreq: 1.2 },
+      happy:   { rotSpeed: 0.007, pulseAmp: 0.04, pulseFreq: 2.5 },
+      focused: { rotSpeed: 0.005, pulseAmp: 0.02, pulseFreq: 3.0 }
+    };
+
+    const loader = new GLTFLoader();
+    let brainRoot = null;
+    let baseBrainScale = 1;
+
+    const brainParts = {
+      kleinhirn: null,
+      links: null,
+      rechts: null,
+      stammhirn: null
+    };
+
+    // Werte für Bewegung
+    let currentMood = "neutral";
+    let rotSpeed = moodMotion.neutral.rotSpeed;
+    let targetRotSpeed = moodMotion.neutral.rotSpeed;
+    let pulseAmp = moodMotion.neutral.pulseAmp;
+    let pulseFreq = moodMotion.neutral.pulseFreq;
+    const clock = new THREE.Clock();
+
+    // ===== Gehirn laden =====
+    loader.load(
+      "brain.glb",   // ggf. anpassen, falls die Datei anders heißt
+      (gltf) => {
+        const brain = gltf.scene;
+        brainRoot = brain;
+
+        // Material klonen, Emission vorbereiten
+        brain.traverse((child) => {
+          if (child.isMesh) {
+            child.material = child.material.clone();
+            if (!("emissive" in child.material)) {
+              child.material.emissive = new THREE.Color(0x000000);
+            }
+            child.material.emissiveIntensity = 0.0;
+            child.material.needsUpdate = true;
+          }
+        });
+
+        // Teile anhand der Blender-Namen referenzieren
+        brainParts.kleinhirn = brain.getObjectByName("Kleinhirn");
+        brainParts.links     = brain.getObjectByName("Linke_Gehirnhälfte");
+        brainParts.rechts    = brain.getObjectByName("Rechte_Gehirnhälfte");
+        brainParts.stammhirn = brain.getObjectByName("Stammhirn");
+
+        console.log("Brain parts:", brainParts);
+
+        // skalieren + zentrieren
+        const box = new THREE.Box3().setFromObject(brain);
+        const size = new THREE.Vector3();
+        box.getSize(size);
+        const maxAxis = Math.max(size.x, size.y, size.z) || 1;
+        const scale = 3 / maxAxis;
+        baseBrainScale = scale;
+        brain.scale.setScalar(scale);
+
+        box.setFromObject(brain);
+        const center = new THREE.Vector3();
+        box.getCenter(center);
+        brain.position.sub(center);
+
+        brain.rotation.y = Math.PI * 0.3;
+
+        scene.add(brain);
+        setWholeBrainNeutral();
+      },
+      undefined,
+      (err) => console.error("Fehler beim Laden von brain.glb:", err)
+    );
+
+    // ===== Hilfsfunktionen für Farbe =====
+    function setWholeBrainNeutral() {
+      if (!brainRoot) return;
+      const m = moodColors.neutral;
+
+      brainRoot.traverse((child) => {
+        if (child.isMesh && child.material) {
+          child.material.color.setHex(m.color);
+          child.material.emissive.setHex(m.emissive);
+          child.material.emissiveIntensity = m.intensity;
+          child.material.needsUpdate = true;
+        }
+      });
+    }
+
+    function applyMoodToPart(partKey, moodKey, intensityScale = 1.0) {
+      const part = brainParts[partKey];
+      const mood = moodColors[moodKey];
+      if (!part || !mood) return;
+
+      part.traverse((child) => {
+        if (child.isMesh && child.material) {
+          child.material.color.setHex(mood.color);
+          child.material.emissive.setHex(mood.emissive);
+          child.material.emissiveIntensity = mood.intensity * intensityScale;
+          child.material.needsUpdate = true;
+        }
+      });
+    }
+
+    // ===== Mapping: Gefühl -> Region + Bewegungsprofil =====
+    function setBrainMood(moodKey) {
+      if (!brainRoot) return;
+
+      // wenn Stimmung unbekannt -> neutral
+      if (!moodColors[moodKey]) moodKey = "neutral";
+      currentMood = moodKey;
+
+      // 1) erst alles neutralisieren
+      setWholeBrainNeutral();
+
+      // 2) Regionen je Gefühl färben
+      switch (moodKey) {
+        case "angry":
+          // rechte Hemisphäre + Stammhirn
+          applyMoodToPart("rechts", "angry", 1.0);
+          applyMoodToPart("stammhirn", "angry", 0.8);
+          break;
+        case "sad":
+          // beide Hemisphären, rechts stärker
+          applyMoodToPart("rechts", "sad", 1.0);
+          applyMoodToPart("links", "sad", 0.7);
+          break;
+        case "happy":
+          // linke Hemisphäre
+          applyMoodToPart("links", "happy", 1.0);
+          break;
+        case "focused":
+          // beide Hemisphären + Kleinhirn
+          applyMoodToPart("links", "focused", 0.9);
+          applyMoodToPart("rechts", "focused", 0.9);
+          applyMoodToPart("kleinhirn", "focused", 0.7);
+          break;
+        case "neutral":
+        default:
+          setWholeBrainNeutral();
+          break;
+      }
+
+      // 3) Bewegungsprofil setzen
+      const motion = moodMotion[moodKey] || moodMotion.neutral;
+      targetRotSpeed = motion.rotSpeed;
+      pulseAmp = motion.pulseAmp;
+      pulseFreq = motion.pulseFreq;
+    }
+
+    // ===== Text → Stimmung =====
+    function inferMoodFromText(text) {
+      const t = text.toLowerCase();
+
+      if (t.includes("wütend") || t.includes("wut") || t.includes("sauer") || t.includes("aggressiv")) {
+        return "angry";
+      }
+      if (t.includes("traurig") || t.includes("depressiv") || t.includes("down") || t.includes("leer")) {
+        return "sad";
+      }
+      if (t.includes("happy") || t.includes("glücklich") || t.includes("zufrieden") || t.includes("danke")) {
+        return "happy";
+      }
+      if (t.includes("fokus") || t.includes("konzentriert") || t.includes("lernen") || t.includes("arbeiten")) {
+        return "focused";
+      }
+
+      return "neutral";
+    }
+
+    // vom Chat aufrufbar
+    window.setBrainMoodFromText = function (text) {
+      const mood = inferMoodFromText(text);
+      setBrainMood(mood);
+    };
+
+    // ===== Animations-Loop mit Stimmung =====
+    function animate() {
+      requestAnimationFrame(animate);
+      const dt = clock.getDelta();
+      const t = clock.getElapsedTime();
+
+      if (brainRoot) {
+        // Rotationsgeschwindigkeit smooth an Zielwert annähern
+        rotSpeed += (targetRotSpeed - rotSpeed) * Math.min(1, dt * 5.0);
+
+        // Rotation
+        brainRoot.rotation.y += rotSpeed;
+        brainRoot.rotation.x = 0.25; // leichter Blick von oben
+
+        // Pulsieren je nach Stimmung (Skalierung)
+        if (pulseAmp > 0 && baseBrainScale > 0) {
+          const s = baseBrainScale * (1 + pulseAmp * Math.sin(t * pulseFreq));
+          brainRoot.scale.setScalar(s);
+        } else {
+          brainRoot.scale.setScalar(baseBrainScale);
+        }
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Resize
+    window.addEventListener("resize", () => {
+      const w = container.clientWidth;
+      const h = container.clientHeight || 300;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    });
+  </script>
+
+
+
 </body>
 </html>
