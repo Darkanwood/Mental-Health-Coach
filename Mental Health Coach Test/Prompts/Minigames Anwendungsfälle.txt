@@ -1,0 +1,96 @@
+##Minigames Usecases
+<!--
+SCHEMA: minigame_usecases
+root: <minigame_usecases>…</minigame_usecases>
+
+<usecase id="STRING" name="STRING">
+    <when>TEXT (kurze Beschreibung, wann der Usecase passt)</when>
+    <games>
+        <game id="INT"/>+
+    </games>
+</usecase>
+
+Constraints:
+- id: required, unique (z. B. RESILIENZ_SKILL).
+- name: required, Nutzer-lesbare Kurzbezeichnung.
+- when: required, Stichworte zu typischer Situation.
+- game id: referenziert zwingend eine existierende <minigame id="..."/> aus dem Layer Minigames.
+-->
+
+<minigame_usecases>
+    <usecase id="RESILIENZ_SKILL" name="Resilienz-Skill">
+        <when>Unruhe, Überforderung, Ablenkung</when>
+        <games>
+            <game id="1"/>
+            <game id="2"/>
+            <game id="3"/>
+            <game id="4"/>
+            <game id="5"/>
+            <game id="6"/>
+            <game id="7"/>
+            <game id="8"/>
+            <game id="9"/>
+            <game id="10"/>
+        </games>
+    </usecase>
+    <usecase id="SELBSTREFLEXION_ORIENTIERUNG" name="Selbstreflexion & Orientierung">
+        <when>Sinnsuche, Grübeln, Lösungsbedarf</when>
+        <games>
+            <game id="11"/>
+            <game id="12"/>
+            <game id="13"/>
+            <game id="14"/>
+            <game id="15"/>
+            <game id="16"/>
+            <game id="17"/>
+            <game id="18"/>
+            <game id="19"/>
+            <game id="20"/>
+        </games>
+    </usecase>
+    <usecase id="EMOTIONSREGULATION" name="Emotionsregulation">
+        <when>Belastung, starke Gefühle, Trostbedarf</when>
+        <games>
+            <game id="21"/>
+            <game id="22"/>
+            <game id="23"/>
+            <game id="24"/>
+            <game id="25"/>
+            <game id="26"/>
+            <game id="27"/>
+            <game id="28"/>
+            <game id="29"/>
+            <game id="30"/>
+        </games>
+    </usecase>
+    <usecase id="SPACING_MUSTERVERAENDERUNG" name="Spacing & Musterveränderung">
+        <when>Wiederholung, Integration, Fortschritt</when>
+        <games>
+            <game id="31"/>
+            <game id="32"/>
+            <game id="33"/>
+            <game id="34"/>
+            <game id="35"/>
+            <game id="36"/>
+            <game id="37"/>
+            <game id="38"/>
+            <game id="39"/>
+            <game id="40"/>
+        </games>
+    </usecase>
+    <usecase id="KOGNITIVE_FLEXIBILITAET" name="Kognitive Flexibilität">
+        <when>Feststecken, Perspektivbedarfe</when>
+        <games>
+            <game id="41"/>
+            <game id="42"/>
+            <game id="43"/>
+            <game id="44"/>
+            <game id="45"/>
+            <game id="46"/>
+            <game id="47"/>
+            <game id="48"/>
+            <game id="49"/>
+            <game id="50"/>
+        </games>
+    </usecase>
+</minigame_usecases>

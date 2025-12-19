@@ -1,0 +1,1779 @@
+##Übungen und Interventionen
+<!--
+SCHEMA: exercises
+root: <exercises>…</exercises>
+
+<exercise id="STRING" name="STRING" category="ENUM">
+    <targets>TEXT (Ziele der Übung)</targets>
+    <indications>TEXT (für wen / welche Situationen)</indications>
+    <mechanism>TEXT (Wirkweise, psychologisch / neurobiologisch)</mechanism>
+    <steps>TEXT oder nummerierte Liste (konkrete Anleitung)</steps>
+    <variants>TEXT (Optionen / Anpassungen, optional)</variants>
+    <safety>TEXT (Kontraindikationen, Warnhinweise)</safety>
+    <example_phrases>TEXT (Beispielsätze für die KI, optional)</example_phrases>
+    <related_exercises>COMMA-SEPARATED IDs (optionale Vernetzung)</related_exercises>
+</exercise>
+
+Constraints:
+- id: required, eindeutig innerhalb der gesamten Datei.
+- name: required, verständlicher Übungsname.
+- category: required, einer aus [body, emotion, cognitive, regulation, social, senses, crisis].
+- targets, indications, mechanism, steps, safety: required.
+- variants, example_phrases, related_exercises: optional.
+- related_exercises: dürfen nur auf existierende exercise-IDs verweisen.
+-->
+
+<exercises>
+<exercise id="UMARMUNG" name="Umarmung / Selbstumarmung" category="body">
+    <targets>
+        Herstellung eines Gefühls von emotionaler Sicherheit.
+        Regulierung von Gefühlen wie Einsamkeit, Stress oder Überforderung.
+        Aktivierung von Bindungserleben und Selbstberuhigung.
+    </targets>
+
+    <indications>
+        Menschen mit starkem Nähebedürfnis oder Körperbezug.
+        Situationen emotionaler Überforderung, Einsamkeit oder innerem Rückzug.
+        Besonders hilfreich bei Sehnsucht nach Kontakt oder Geborgenheit.
+    </indications>
+
+    <mechanism>
+        Körperkontakt (auch symbolisch) kann Oxytocin freisetzen.
+        Oxytocin reduziert Stress, senkt die Herzfrequenz und fördert Sicherheit.
+        Bewusste Wahrnehmung von Wärme und Nähe wirkt emotional stabilisierend.
+        Selbstumarmung aktiviert ähnliche neuronale Netzwerke wie soziale Berührung.
+    </mechanism>
+
+    <steps>
+        1. Finde eine vertraute Person, bei der du dich sicher fühlst.
+        2. Bitte sie um eine bewusste, ruhige Umarmung von mindestens 20 Sekunden.
+        3. Spüre währenddessen in deinen Körper: Atmung, Herzschlag, Temperatur.
+        4. Wenn niemand da ist: Umarme dich selbst oder halte ein Kissen, Kuscheltier oder Haustier.
+        5. Bleibe präsent und richte deine Aufmerksamkeit auf die Körperempfindungen.
+    </steps>
+
+    <variants>
+        Selbstumarmung statt zwischenmenschlicher Umarmung, besonders bei Berührungsängsten.
+        Statt Umarmung: Wärmflasche, Decke oder schweres Kissen halten.
+        Dauer der Umarmung anpassen (kürzer bei sensorisch sensiblen Personen).
+        Bei Kindern spielerische Variante, z. B. „Schmetterlings-Umarmung“.
+        Optionale begleitende Sinnesreize: leise beruhigende Musik, angenehme Stimme,
+        Bild einer geliebten Person, eines Tieres oder einer positiven Erinnerung.
+    </variants>
+
+    <safety>
+        Übung muss immer freiwillig sein – keine erzwungene Nähe.
+        Bei traumatisch besetzten Berührungserfahrungen Alternativen wie Kälte oder Atmung nutzen.
+        Nicht geeignet bei starker körperlicher Abneigung gegenüber Nähe oder bei aktiven Dissoziationen mit Berührung.
+    </safety>
+
+    <example_phrases>
+        „Wie wäre es mit einer bewussten Umarmung – mit dir selbst oder jemandem, dem du vertraust?“
+        „Manchmal reicht eine Umarmung, um sich ein kleines Stück sicherer zu fühlen.“
+        „Spürst du, wie sich dein Körper beim Umarmen etwas beruhigt?“
+        „Wenn niemand da ist: Umarme dich selbst und nimm deine Wärme bewusst wahr.“
+        „Berührung kann ein Anker sein – ganz einfach, ganz still.“
+    </example_phrases>
+
+    <related_exercises>
+        KAELTE, SCHUETTELN, ATMUNG
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="SCHUETTELN" name="Sich schütteln" category="body">
+    <targets>
+        Abbau körperlicher Anspannung.
+        Regulation von Stress durch rhythmische Bewegung.
+        Rückkehr zu Körperwahrnehmung und Selbstregulation.
+    </targets>
+
+    <indications>
+        Innere Anspannung, Konflikte, Bewegungsdrang.
+        Nach Streit, Überforderung oder emotionaler Starre.
+        Besonders geeignet bei körpernaher Stressverarbeitung.
+    </indications>
+
+    <mechanism>
+        Schütteln unterstützt den Abbau überschüssiger Energie, ähnlich wie bei Tieren nach einer Gefahrensituation.
+        Rhythmische Bewegung beruhigt das Nervensystem durch Entladung und Neuregulation.
+        Fördert spontane und intuitive körperbasierte Selbstregulation.
+    </mechanism>
+
+    <steps>
+        1. Stelle dich hüftbreit hin, Knie leicht gebeugt.
+        2. Beginne locker mit Armen, Schultern und Beinen zu schütteln.
+        3. Lasse deinen gesamten Körper frei schütteln – ohne Bewertung.
+        4. Schließe optional die Augen und atme ruhig weiter.
+        5. Beende die Übung bewusst und spüre in deinen Körper nach.
+    </steps>
+
+    <variants>
+        Nur Hände oder Füße im Sitzen bewegen.
+        Kleine Bewegungen bei Erschöpfung oder geringer Belastbarkeit.
+        Musikalische Unterstützung wie Trommelrhythmen oder Naturgeräusche.
+    </variants>
+
+    <safety>
+        Nur im Rahmen der eigenen körperlichen Beweglichkeit ausführen.
+        Nicht geeignet bei akuten Schwindelgefühlen oder Kreislaufproblemen.
+    </safety>
+
+    <example_phrases>
+        „Fühlst du dich verspannt? Probier ein kurzes Ganzkörperschütteln.“
+        „Schütteln wirkt manchmal überraschend gut – es hilft dem Nervensystem loszulassen.“
+        „Lass deinen Körper machen, was er gerade braucht. Einfach schütteln, ohne Bewertung.“
+    </example_phrases>
+
+    <related_exercises>
+        AUSPOWERN, ATMUNG, KAELTE
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="KAELTE" name="Kälte (Eiswürfel, kaltes Wasser, Gelpad)" category="body">
+    <targets>
+        Regulation intensiver Emotionen.
+        Verbesserung der Präsenz im Hier und Jetzt.
+        Unterbrechung von Dissoziation oder Überflutung.
+    </targets>
+
+    <indications>
+        Starke Emotionen wie Angst, Wut, Traurigkeit.
+        Dissoziative Tendenzen („wie weg sein“, Taubheit).
+        Überflutung, das Gefühl „es wird alles zu viel“.
+    </indications>
+
+    <mechanism>
+        Kältereize aktivieren das Nervensystem (vagusnah), fördern Präsenz und bringen Aufmerksamkeit in den Körper.
+        Intensive sensorische Reize unterbrechen dysfunktionale Grübel- oder Angstschleifen.
+        Kälte kann Erdung und klare Abgrenzung zum inneren Erleben schaffen.
+    </mechanism>
+
+    <steps>
+        1. Nimm einen Eiswürfel, ein kaltes Gelpad oder halte Hände/Unterarme unter kaltes Wasser.
+        2. Lege den Kältereiz bewusst auf die Haut (z. B. Handgelenke, Nacken, Wangen).
+        3. Atme ruhig weiter und richte deine Aufmerksamkeit gezielt auf die Kälte.
+        4. Beobachte, wie sich dein Körpergefühl verändert.
+        5. Beende die Übung, wenn es sich ausreichend wach und klar anfühlt.
+    </steps>
+
+    <variants>
+        Kaltes Wasser über Handgelenke laufen lassen.
+        Kühlpack im Nacken oder auf der Stirn.
+        Kurzer Aufenthalt im Freien bei kühler Luft.
+    </variants>
+
+    <safety>
+        Nicht übertreiben – Erfrierungsgefahr bei zu langer oder zu intensiver Kälte.
+        Nicht geeignet bei bestimmten Durchblutungsstörungen (z. B. Raynaud-Syndrom).
+        Immer auf das eigene Körpergefühl achten und rechtzeitig abbrechen.
+    </safety>
+
+    <example_phrases>
+        „Ein bisschen Kälte kann helfen, dich wieder mehr im Körper zu spüren.“
+        „Halte deine Hände kurz unter kaltes Wasser und spüre ganz bewusst nach.“
+        „Kälte ist wie ein Reset-Knopf für das Nervensystem – kurz, klar, wach.“
+    </example_phrases>
+
+    <related_exercises>
+        UMARMUNG, GEWICHTSDECKE, ATMUNG
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="WAERME" name="Wärme (Tee, Wärmflasche, Decke)" category="body">
+    <targets>
+        Beruhigung des Nervensystems.
+        Förderung von Geborgenheit und Sicherheit.
+        Unterstützung beim Einschlafen oder Entspannen.
+    </targets>
+
+    <indications>
+        Innere Unruhe, Anspannung, Schlafprobleme.
+        Gefühle von Kälte, innerer Leere oder Getrenntsein.
+    </indications>
+
+    <mechanism>
+        Wärme aktiviert Wohlfühlreaktionen im Körper.
+        Wärme kann Muskelspannung reduzieren und Entspannung fördern.
+        Das Gefühl von „eingepackt sein“ kann emotionale Sicherheit erhöhen.
+    </mechanism>
+
+    <steps>
+        1. Bereite eine Wärmequelle vor (z. B. Wärmflasche, warmes Getränk, Decke).
+        2. Nimm dir einen ruhigen Ort und mache es dir bequem.
+        3. Lege die Wärmequelle an eine angenehme Körperstelle (z. B. Bauch, Rücken, Füße).
+        4. Spüre die Wärme bewusst und atme ruhig ein und aus.
+        5. Verweile einige Minuten in dieser Situation.
+    </steps>
+
+    <variants>
+        Warme Dusche oder Bad.
+        Ein warmer Pullover oder Schal.
+        Wärme in Kombination mit beruhigender Musik oder Duft.
+    </variants>
+
+    <safety>
+        Achte darauf, dass die Wärme nicht zu heiß ist (Verbrennungsgefahr).
+        Nicht einschlafen mit sehr heißen Wärmekissen direkt auf der Haut.
+    </safety>
+
+    <example_phrases>
+        „Manchmal hilft Wärme – eine Decke, ein Tee oder eine Wärmflasche – um den Körper zu beruhigen.“
+        „Spür mal, wie sich dein Körper unter der Decke oder mit dem Tee etwas entspannt.“
+    </example_phrases>
+
+    <related_exercises>
+        GEWICHTSDECKE, UMARMUNG, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="GEWICHTSDECKE" name="Gewichtsdecke / Tiefendruck" category="body">
+    <targets>
+        Beruhigung und Erdung.
+        Verbesserung von Schlaf und Entspannung.
+        Regulation bei Angst, Unruhe oder innerer Übererregung.
+        Stimulation von Tiefendruckrezeptoren zur körperbasierten Beruhigung.
+    </targets>
+
+    <indications>
+        Schlafprobleme, innere Anspannung, erhöhte emotionale oder körperliche Erregung.
+        Unruhe am Abend oder nach intensiven Gedankenschleifen.
+    </indications>
+
+    <mechanism>
+        Tiefendruck beruhigt das autonome Nervensystem.
+        Reduktion von Stresshormonen und Förderung von Serotonin.
+        Simuliert das Gefühl gehalten oder gestützt zu werden.
+    </mechanism>
+
+    <steps>
+        1. Lege dich bequem hin.
+        2. Breite die Gewichtsdecke gleichmäßig über deinem Körper aus.
+        3. Schließe die Augen und spüre den Druck bewusst im Körper.
+        4. Verbleibe 10–20 Minuten (oder länger, wenn es angenehm bleibt).
+    </steps>
+
+    <variants>
+        Schweres Kissen auf Brust oder Bauch.
+        Festeres Zudecken mit Decke oder Jacke.
+        Umarmen eines festen Gegenstands für zusätzlichen Druck.
+        Optional: abgedunkelter Raum oder beruhigende Musik.
+    </variants>
+
+    <safety>
+        Nicht geeignet bei Atembeschwerden oder Kreislaufproblemen.
+        Kein Einsatz bei kleinen Kindern ohne Aufsicht.
+        Gewicht sollte sich niemals erdrückend oder unangenehm anfühlen.
+    </safety>
+
+    <example_phrases>
+        „Eine Gewichtsdecke kann dir helfen, dich sicher und gehalten zu fühlen.“
+        „Spürst du, wie dein Körper unter dem sanften Druck zur Ruhe kommt?“
+        „Du darfst dich einfach sinken lassen und den Halt genießen.“
+    </example_phrases>
+
+    <related_exercises>
+        UMARMUNG, WAERME, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="AUSPOWERN" name="Auspowern (Joggen, Tanzen, Springen)" category="body">
+    <targets>
+        Abbau von innerem Druck und Stress.
+        Freisetzung von Endorphinen und Aktivierung positiver Energien.
+        Förderung von Klarheit, Energiefluss und emotionaler Entladung.
+    </targets>
+
+    <indications>
+        Anspannung, Ärger oder Grübelspiralen.
+        Bewegungsdrang oder Reizüberflutung.
+        Nach langen Arbeitsphasen, Konflikten oder emotionalen Blockaden.
+    </indications>
+
+    <mechanism>
+        Schnelle Bewegung aktiviert das sympathische Nervensystem zur Entladung.
+        Unterstützt die Ausschüttung von Endorphinen, Serotonin und Dopamin.
+        Fördert körperliches Rhythmusgefühl und energetische Regulation.
+    </mechanism>
+
+    <steps>
+        1. Wähle eine Bewegungsform wie Joggen, Tanzen, Springen oder schnelles Gehen.
+        2. Beginne bewusst mit ein paar tiefen Atemzügen.
+        3. Bewege dich energisch für 5–20 Minuten.
+        4. Spüre anschließend nach: Puls, Atmung, Erschöpfung, Körpergefühl.
+        5. Beende die Einheit bewusst, ggf. mit Dehnung oder ruhiger Atmung.
+    </steps>
+
+    <variants>
+        Unterschiedliche Intensitäten (locker bis intensiv).
+        Indoor-Varianten wie Tanzen, Hüpfen oder Seilspringen.
+        Outdoor-Varianten wie Joggen, schnelles Gehen oder Auspowern im Freien.
+        Optional: rhythmische Musik, Outdoor-Reize (Wind, Sonne, Weite).
+    </variants>
+
+    <safety>
+        Auf körperliche Grenzen achten.
+        Nicht geeignet bei Herzproblemen oder akutem Schwindel.
+        Nach der Bewegung ausreichend Flüssigkeit aufnehmen.
+    </safety>
+
+    <example_phrases>
+        „Vielleicht hilft dir Bewegung – tanze, renne oder hüpf dich frei.“
+        „Manchmal löst Auspowern mehr als Nachdenken.“
+        „Du darfst deinen Körper jetzt richtig nutzen und Spannung abbauen.“
+    </example_phrases>
+
+    <related_exercises>
+        SCHUETTELN, SPAZIEREN, MUSIK_HOEREN
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="SAUNA" name="Saunagang" category="body">
+    <targets>
+        Entspannung und Loslassen durch intensive Wärme.
+        Förderung körperlicher Erholung.
+        Aktivierung des Parasympathikus und Reduktion innerer Unruhe.
+    </targets>
+
+    <indications>
+        Muskuläre Anspannung, Stress, innere Unruhe.
+        Wunsch nach starker körperlicher Entspannung.
+    </indications>
+
+    <mechanism>
+        Wärme und wechselnde Temperaturen fördern Durchblutung und Entspannung.
+        Saunagänge können das vegetative Nervensystem regulieren.
+    </mechanism>
+
+    <steps>
+        1. Plane ausreichend Zeit für einen Saunagang ein.
+        2. Nimm dir nach dem Saunagang Zeit zum Nachruhen.
+        3. Achte auf ausreichend Flüssigkeitszufuhr.
+    </steps>
+
+    <variants>
+        Sanftere Wärmebäder.
+        Fußbad oder warmes Bad statt Sauna.
+    </variants>
+
+    <safety>
+        Nicht geeignet bei bestimmten Herz-Kreislauf-Erkrankungen.
+        Im Zweifel ärztlichen Rat einholen.
+    </safety>
+
+    <example_phrases>
+        „Wenn du Zugang zu einer Sauna hast und körperlich gesund bist, kann Wärme sehr entspannend wirken.“
+    </example_phrases>
+
+    <related_exercises>
+        WAERME, GEWICHTSDECKE, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="SPAZIEREN" name="Spazieren gehen" category="body">
+    <targets>
+        Förderung von Bewegung und Durchblutung.
+        Abbau von Stress und Grübeln.
+        Kontakt zur Umwelt und Natur.
+    </targets>
+
+    <indications>
+        Innere Unruhe, Grübelschleifen, Antriebslosigkeit.
+        Wunsch nach Perspektivwechsel oder frischer Luft.
+    </indications>
+
+    <mechanism>
+        Gehen reguliert das Nervensystem durch rhythmische Bewegung.
+        Naturreize oder Umweltwahrnehmung erweitern die Aufmerksamkeit.
+    </mechanism>
+
+    <steps>
+        1. Wähle eine Strecke (z. B. um den Block, im Park, zur Arbeit).
+        2. Gehe in bewusstem Tempo.
+        3. Richte deine Aufmerksamkeit abwechselnd nach außen (Umgebung) und nach innen (Körper).
+    </steps>
+
+    <variants>
+        Spazieren mit Musik oder Podcast.
+        Spazieren in Stille.
+        Spazieren mit einer vertrauten Person.
+    </variants>
+
+    <safety>
+        Auf körperliche Grenzen achten.
+    </safety>
+
+    <example_phrases>
+        „Ein kurzer Spaziergang kann Kopf und Körper in Bewegung bringen.“
+    </example_phrases>
+
+    <related_exercises>
+        NATUR, AUSPOWERN, PAUSE_AKTIV
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="TIERKONTAKT" name="Kontakt zu Tieren" category="emotion">
+    <targets>
+        Trost, Verbundenheit und Freude.
+        Reduktion von Stress und Einsamkeit.
+    </targets>
+
+    <indications>
+        Einsamkeit, Traurigkeit, das Gefühl ungeliebt zu sein.
+        Wunsch nach Nähe, aber Schwierigkeit mit Menschenkontakt.
+    </indications>
+
+    <mechanism>
+        Kontakt zu Tieren kann Oxytocin und andere Wohlfühlhormone freisetzen.
+        Tiere bewerten nicht und bieten unmittelbare Reaktion auf Zuwendung.
+    </mechanism>
+
+    <steps>
+        1. Suche, wenn möglich, den Kontakt zu einem Tier (z. B. Haustier, Bauernhof, Tierpark).
+        2. Nimm dir Zeit, das Tier zu beobachten, zu streicheln oder ihm einfach nur nahe zu sein.
+        3. Achte auf dein Körpergefühl, Atmung und Emotionen währenddessen.
+    </steps>
+
+    <variants>
+        Besuch in einem Streichelzoo.
+        Zeit mit dem eigenen Haustier.
+        Tierschutzorganisationen, wo Kontakt zu Tieren möglich ist.
+    </variants>
+
+    <safety>
+        Allergien und Angst vor Tieren berücksichtigen.
+    </safety>
+
+    <example_phrases>
+        „Wenn du Zugang zu Tieren hast: Manchmal tut es gut, einfach bei einem Tier zu sein.“
+    </example_phrases>
+
+    <related_exercises>
+        TIERVIDEOS, UMARMUNG, LIEBLINGSORT
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="TIERVIDEOS" name="Tiere beobachten (z. B. Videos)" category="senses">
+    <targets>
+        Aktivierung positiver Emotionen.
+        Kurze Ablenkung von Grübeln und Stress.
+    </targets>
+
+    <indications>
+        Niedrige Stimmung, Einsamkeit, Überforderung.
+        Wunsch nach leichter, unverbindlicher Aufhellung.
+    </indications>
+
+    <mechanism>
+        Niedliche oder beruhigende Tierbilder/Videos aktivieren Belohnungssysteme.
+        Lächeln oder Lachen kann Stress reduzieren.
+    </mechanism>
+
+    <steps>
+        1. Suche gezielt nach Tier- oder Naturvideos, die dich ansprechen.
+        2. Schaue sie bewusst an, ohne nebenbei etwas anderes zu tun.
+        3. Achte darauf, was sie in dir auslösen.
+    </steps>
+
+    <variants>
+        Live-Cams aus Zoos oder Natur.
+        Fotos statt Videos.
+        Eigene Tierfotos anschauen.
+    </variants>
+
+    <safety>
+        Keine spezifischen Kontraindikationen.
+    </safety>
+
+    <example_phrases>
+        „Manchmal hilft es, ein paar Minuten süße oder beruhigende Tier-Videos anzuschauen.“
+    </example_phrases>
+
+    <related_exercises>
+        TIERKONTAKT, MUSIK_HOEREN, DANKBARKEIT
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="MUSIK_HOEREN" name="Musik bewusst hören" category="senses">
+    <targets>
+        Emotionsregulation.
+        Stimmungsaufhellung oder -entlastung.
+    </targets>
+
+    <indications>
+        Niedergeschlagenheit, innere Leere, Überforderung.
+        Wunsch nach emotionalem Ausdruck oder Beruhigung.
+    </indications>
+
+    <mechanism>
+        Musik beeinflusst Körperrhythmus, Herzschlag und Emotionen.
+        Musik kann Erinnerungen und Ressourcen aktivieren.
+    </mechanism>
+
+    <steps>
+        1. Wähle Musik, die zu deinem aktuellen Bedürfnis passt (beruhigend, tröstend, kraftvoll).
+        2. Höre sie für ein paar Minuten ganz bewusst.
+        3. Achte auf Körperempfindungen und Gefühle.
+    </steps>
+
+    <variants>
+        Mitbewegung, Mitsingen, Tanzen.
+        Nur im Hintergrund zur Beruhigung.
+    </variants>
+
+    <safety>
+        Inhalte wählen, die dich nicht zusätzlich belasten (keine triggernden Texte).
+    </safety>
+
+    <example_phrases>
+        „Vielleicht gibt es ein Lied, das dir gerade gut tun könnte.“
+    </example_phrases>
+
+    <related_exercises>
+        AUSPOWERN, TIERVIDEOS, DANKBARKEIT
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="PAUSE_AKTIV" name="Aktive Pause" category="regulation">
+    <targets>
+        Unterbrechung von Dauerstress.
+        Erholung und Neuorientierung.
+    </targets>
+
+    <indications>
+        Lang anhaltender Stress, Überforderung, Erschöpfung.
+        Gefühl, „durchlaufen“ zu müssen ohne Pause.
+    </indications>
+
+    <mechanism>
+        Kurze Pausen helfen dem Nervensystem, sich zu regulieren.
+        Unterbrechung von Dauerbelastung schafft Raum für Reflexion.
+    </mechanism>
+
+    <steps>
+        1. Entscheide dich bewusst für eine Pause (5–15 Minuten).
+        2. Verlasse möglichst den Arbeitsplatz oder den aktuellen Ort.
+        3. Mache etwas Einfaches: trinken, kurz gehen, strecken, Fenster öffnen.
+        4. Komme danach bewusst zurück.
+    </steps>
+
+    <variants>
+        Mikropause von 1–2 Minuten.
+        Längere Pause mit bewusstem Rückzug.
+    </variants>
+
+    <safety>
+        Keine spezifischen Kontraindikationen.
+    </safety>
+
+    <example_phrases>
+        „Vielleicht hilft dir eine echte kleine Pause, statt weiter durchzupressen.“
+    </example_phrases>
+
+    <related_exercises>
+        SPAZIEREN, ATMUNG, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="PUTZEN" name="Aufräumen / Putzen als Strukturübung" category="regulation">
+    <targets>
+        Struktur schaffen.
+        Gefühl von Kontrolle und Wirksamkeit.
+    </targets>
+
+    <indications>
+        Gefühl von Chaos, Überforderung, innerer Unruhe.
+    </indications>
+
+    <mechanism>
+        Ordnung im Außen kann innere Ordnung unterstützen.
+        Körperliche Aktivität wirkt regulierend.
+    </mechanism>
+
+    <steps>
+        1. Wähle eine kleine, begrenzte Aufgabe (z. B. Tisch aufräumen, Spüle leeren).
+        2. Setze dir ein klares Zeitlimit (z. B. 10–15 Minuten).
+        3. Führe die Aufgabe bewusst aus.
+    </steps>
+
+    <variants>
+        Sortieren, Wäsche zusammenlegen, Müll rausbringen.
+    </variants>
+
+    <safety>
+        Nicht als Perfektionismusfalle nutzen.
+    </safety>
+
+    <example_phrases>
+        „Manchmal hilft es, ein kleines Stück Chaos im Außen zu ordnen.“
+    </example_phrases>
+
+    <related_exercises>
+        PAUSE_AKTIV, SPAZIEREN, RITUALE_STRUKTUREN
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="NATUR" name="Naturkontakt" category="emotion">
+    <targets>
+        Entspannung und Weitung der Wahrnehmung.
+        Gefühl von Verbundenheit und Perspektive.
+    </targets>
+
+    <indications>
+        Stress, Grübeln, Engegefühle.
+        Überforderung durch Bildschirmarbeit oder Innenfokus.
+    </indications>
+
+    <mechanism>
+        Naturreize (Licht, Farben, Geräusche) wirken regulierend auf das Nervensystem.
+        Naturerleben kann das Gefühl von Verbundenheit und Sinn stärken.
+    </mechanism>
+
+    <steps>
+        1. Gehe, wenn möglich, ins Freie: Park, Wald, Wiese, Balkon.
+        2. Nimm bewusst deine Umgebung wahr: Farben, Geräusche, Gerüche, Temperatur.
+        3. Atme ruhig und tief ein und aus.
+    </steps>
+
+    <variants>
+        Zimmerpflanzen betrachten oder pflegen.
+        Naturbilder oder -videos anschauen, wenn reale Natur nicht zugänglich ist.
+    </variants>
+
+    <safety>
+        Keine spezifischen Kontraindikationen.
+    </safety>
+
+    <example_phrases>
+        „Ein paar Minuten Natur – auch ein Baum vor dem Fenster – können gut tun.“
+    </example_phrases>
+
+    <related_exercises>
+        SPAZIEREN, SONNE_REGEN
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="SONNE_REGEN" name="Wetter bewusst erleben (Sonne, Regen, Wind)" category="senses">
+    <targets>
+        Präsenz im Hier und Jetzt.
+        Erdung und Sinnesaktivierung.
+    </targets>
+
+    <indications>
+        Gefühl von Abgetrenntheit, Dissoziation, innerer Leere.
+        Wunsch nach „echtem“ Erleben statt Grübeln.
+    </indications>
+
+    <mechanism>
+        Wetterreize wirken direkt auf den Körper (Temperatur, Feuchtigkeit, Wind).
+        Diese Reize können helfen, den Fokus von innen nach außen zu lenken.
+    </mechanism>
+
+    <steps>
+        1. Gehe, wenn möglich, kurz nach draußen.
+        2. Spüre bewusst Sonne, Regen oder Wind auf deiner Haut.
+        3. Achte auf Gerüche, Geräusche und Licht.
+    </steps>
+
+    <variants>
+        Am Fenster stehen und Wetter beobachten.
+    </variants>
+
+    <safety>
+        Auf passende Kleidung achten.
+    </safety>
+
+    <example_phrases>
+        „Manchmal hilft es, echtes Wetter auf der Haut zu spüren – Sonne, Wind oder sogar Regen.“
+    </example_phrases>
+
+    <related_exercises>
+        NATUR, KAELTE
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="IN_DEN_HORIZONT_SCHAUEN" name="In die Weite schauen" category="senses">
+    <targets>
+        Erweiterung der inneren Perspektive.
+        Unterbrechung von Grübeln und Tunnelblick.
+    </targets>
+
+    <indications>
+        Engegefühle, Grübelschleifen, innere Überforderung.
+    </indications>
+
+    <mechanism>
+        Blick in die Weite (Horizont, Himmel) kann das Nervensystem beruhigen.
+        Visuelle Weite unterstützt kognitive Weitung (neue Perspektiven).
+    </mechanism>
+
+    <steps>
+        1. Suche einen Ort, von dem aus du weit schauen kannst (Fenster, Balkon, Hügel).
+        2. Richte deinen Blick in die Ferne und halte ihn dort für einige Momente.
+        3. Atme ruhig ein und aus und lasse die Weite auf dich wirken.
+    </steps>
+
+    <variants>
+        In die Wolken oder Sterne schauen.
+        Ein Bild eines weiten Ortes betrachten (z. B. Meer, Berge).
+        Optional: frische Luft, Sonnenstrahlen oder beruhigende Musik.
+    </variants>
+
+    <safety>
+        Keine spezifischen Kontraindikationen.
+        Bei Schwindel kurze Pausen einlegen.
+    </safety>
+
+    <example_phrases>
+        „Manchmal braucht das Gehirn einfach ein Stück Weite.“
+        „Schau hinaus – ohne Ziel, einfach nur so.“
+        „Gönn deinen Augen und Gedanken Raum.“
+    </example_phrases>
+
+    <related_exercises>
+        NATUR, SPAZIEREN, ATMUNG, PAUSE_AKTIV
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="LIEBLINGSORT" name="An den Lieblingsort gehen (real oder imaginär)" category="emotion">
+    <targets>
+        Sicherheit und Geborgenheit erleben.
+        Rückbindung an positive Erinnerungen und innere Ressourcen.
+        Entspannung durch vertraute, wohltuende Umgebung.
+    </targets>
+
+    <indications>
+        Emotionaler Rückzug, Überforderung, Sehnsucht nach Halt.
+        Menschen mit positiven Ankererfahrungen oder starken Wohlfühlorten.
+        Momente, in denen Stabilität oder Orientierung fehlt.
+    </indications>
+
+    <mechanism>
+        Vertrautheit wirkt regulierend und erhöht subjektive Sicherheit.
+        Positive Erinnerungen aktivieren das Belohnungssystem und stärken Resilienz.
+        Angenehme Umgebung – real oder imaginär – beeinflusst Stimmung und Orientierung.
+    </mechanism>
+
+    <steps>
+        1. Überlege, an welchem Ort du dich besonders wohl oder sicher gefühlt hast.
+        2. Gehe real oder in deiner Vorstellung an diesen Ort.
+        3. Nimm Details bewusst wahr: Geräusche, Licht, Farben, Gerüche, Atmosphäre.
+        4. Verweile einige Minuten dort und atme ruhig und tief.
+    </steps>
+
+    <variants>
+        Visualisierung mit geschlossenen Augen.
+        Mini-Lieblingsort im Zimmer schaffen (Ecke, Kissen, Duft, Licht).
+        Nutzung von Musik, Bildern oder Gerüchen zur Verstärkung des Erinnerungsgefühls.
+    </variants>
+
+    <safety>
+        Nicht geeignet bei Orten mit ambivalenten oder schmerzhaften Erinnerungen.
+        Nur Orte nutzen, die klar positiv oder stabilisierend wirken.
+    </safety>
+
+    <example_phrases>
+        „Wo ist dein Ort zum Durchatmen?“
+        „Vielleicht kannst du dich an deinen Wohlfühlort erinnern.“
+        „Du darfst innerlich dort sein, wo es dir gut geht.“
+    </example_phrases>
+
+    <related_exercises>
+        INNERER_SICHERER_ORT, IMAGINATION, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="DUNKLE_SCHOKOLADE" name="Dunkle Schokolade essen" category="senses">
+    <targets>
+        Aktivierung positiver Sinnesempfindungen.
+        Selbstzuwendung durch einen bewussten Genussmoment.
+        Stimmungsaufhellung durch sensorische und ernährungsbezogene Effekte.
+    </targets>
+
+    <indications>
+        Emotionale Leere, Überforderung oder Rückzug.
+        Bedarf nach kurzer, einfacher und unmittelbarer Selbstfürsorge.
+        Situationen, in denen Nähe zu sich selbst schwerfällt.
+    </indications>
+
+    <mechanism>
+        Dunkler Kakaoanteil kann stimmungsaufhellend wirken.
+        Genuss aktiviert das Belohnungssystem und erzeugt positive Affekte.
+        Sensorische Präsenz entsteht über Geruch, Geschmack und Textur.
+    </mechanism>
+
+    <steps>
+        1. Nimm ein Stück dunkle Schokolade (mindestens 70 % Kakao).
+        2. Lege es bewusst auf die Zunge und schließe optional die Augen.
+        3. Spüre Schmelz, Temperatur, Textur und Geschmack.
+        4. Atme ruhig weiter und genieße den Moment ohne Ablenkung.
+    </steps>
+
+    <variants>
+        Andere kleine Genussmittel wie Beeren, Honig oder Tee.
+        Duftender Tee als sanfte Alternative.
+        Optional: ruhige Atmosphäre, Musik oder ein warmes Getränk zur Begleitung.
+    </variants>
+
+    <safety>
+        Nicht geeignet bei aktiven Essstörungen ohne fachliche Begleitung oder vorherige Reflexion.
+    </safety>
+
+    <example_phrases>
+        „Wie wäre ein kleines Stück Schokolade – ganz bewusst genossen?“
+        „Du darfst dir Genuss erlauben – auch im Kleinen.“
+        „Spür mal, wie sich das Stück auf deiner Zunge anfühlt.“
+    </example_phrases>
+
+    <related_exercises>
+        NATUR, MUSIK_HOEREN, ATMUNG, WAERME
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="INNERER_SICHERER_ORT" name="Innerer sicherer Ort (Imagination)" category="emotion">
+    <targets>
+        Aufbau innerer Sicherheit.
+        Stabilisierung bei Überforderung.
+        Schaffung eines inneren Rückzugsortes.
+    </targets>
+
+    <indications>
+        Angst, innere Unruhe, Überforderung.
+        Traumafolgen mit Bedarf an Stabilisierung.
+    </indications>
+
+    <mechanism>
+        Imagination kann ähnliche Netzwerke aktivieren wie reale Orte.
+        Das Erleben eines sicheren inneren Ortes stärkt Selbstregulation.
+    </mechanism>
+
+    <steps>
+        1. Schließe die Augen, wenn es angenehm ist.
+        2. Stelle dir einen Ort vor, an dem du dich sicher und wohl fühlst (real oder frei erfunden).
+        3. Fülle den Ort mit möglichst vielen Details (Geräusche, Gerüche, Farben, Temperatur).
+        4. Verbringe bewusst einige Minuten an diesem Ort in deiner Vorstellung.
+    </steps>
+
+    <variants>
+        Ort mit einer unterstützenden Figur (Tier, Mensch, Fantasiegestalt).
+    </variants>
+
+    <safety>
+        Nicht geeignet als alleinige Intervention bei akuter Traumakonfrontation.
+    </safety>
+
+    <example_phrases>
+        „Wir können einen inneren Ort entwickeln, an dem du dich sicherer fühlen darfst.“
+    </example_phrases>
+
+    <related_exercises>
+        LIEBLINGSORT, NATUR, ATMUNG
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="IMAGINATION" name="Freie Imagination" category="emotion">
+    <targets>
+        Stärkung innerer Bilder und Ressourcen.
+        Flexibilisierung von Erleben und Perspektive.
+    </targets>
+
+    <indications>
+        Bedarf an Ressourcenerleben, Kreativität, innerer Bewegung.
+    </indications>
+
+    <mechanism>
+        Imagination nutzt ähnliche Netzwerke wie tatsächliches Erleben.
+        Positive Vorstellungen können Emotionen und Körperempfinden beeinflussen.
+    </mechanism>
+
+    <steps>
+        1. Wähle ein Thema (z. B. Ruhe, Stärke, Verbindung).
+        2. Stelle dir eine passende Szene vor.
+        3. Fülle sie mit möglichst vielen Details.
+    </steps>
+
+    <variants>
+        Geführte Imagination mit Audio.
+    </variants>
+
+    <safety>
+        Keine intensiven traumabezogenen Inhalte ohne Fachbegleitung.
+    </safety>
+
+    <example_phrases>
+        „Manchmal kann eine innere Bilderreise helfen, neue Gefühle zu aktivieren.“
+    </example_phrases>
+
+    <related_exercises>
+        INNERER_SICHERER_ORT, LIEBLINGSORT, NATUR
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="ATMUNG" name="Bewusste Atmung" category="regulation">
+    <targets>
+        Beruhigung des Nervensystems.
+        Reduktion von Stress und Angst.
+    </targets>
+
+    <indications>
+        Anspannung, Nervosität, Panik, Schlafprobleme.
+    </indications>
+
+    <mechanism>
+        Langsame, tiefe Atmung aktiviert den Parasympathikus.
+        Der Fokus auf die Atmung unterbricht Grübeln.
+    </mechanism>
+
+    <steps>
+        1. Setze oder lege dich bequem hin.
+        2. Atme 4 Sekunden ein, halte den Atem kurz, atme 6 Sekunden aus.
+        3. Wiederhole diesen Rhythmus für einige Minuten.
+    </steps>
+
+    <variants>
+        4-7-8-Atmung.
+        Zählen der Atemzüge.
+    </variants>
+
+    <safety>
+        Bei Schwindel die Intensität reduzieren.
+    </safety>
+
+    <example_phrases>
+        „Wir können eine einfache Atemübung ausprobieren, um dein System etwas zu beruhigen.“
+    </example_phrases>
+
+    <related_exercises>
+        KAELTE, UMARMUNG, INNERER_SICHERER_ORT
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="JOURNAL" name="Schreibübung / Journaling" category="cognitive">
+    <targets>
+        Strukturierung von Gedanken und Gefühlen.
+        Entlastung durch Externalisierung.
+    </targets>
+
+    <indications>
+        Grübeln, Gedankenkarussell, emotionale Überforderung.
+    </indications>
+
+    <mechanism>
+        Schreiben hilft, Gedanken zu ordnen und schafft Distanz.
+        Es ermöglicht Zugang zu Gefühlen und Bedürfnissen.
+    </mechanism>
+
+    <steps>
+        1. Nimm Stift und Papier oder ein digitales Dokument.
+        2. Schreibe für 5–15 Minuten alles auf, was dir durch den Kopf geht, ohne zu bewerten.
+        3. Lies es, wenn du möchtest, kurz durch und markiere 1–2 wichtige Punkte.
+    </steps>
+
+    <variants>
+        Dankbarkeitsjournal.
+        Morgenseiten.
+    </variants>
+
+    <safety>
+        Nicht für sehr traumatische Inhalte ohne Fachbegleitung.
+    </safety>
+
+    <example_phrases>
+        „Vielleicht hilft es, ein paar Minuten alles aufzuschreiben, was in deinem Kopf los ist.“
+    </example_phrases>
+
+    <related_exercises>
+        REFRAMING, WIRKLICH_WICHTIG, NEUAUSRICHTUNG
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="GESPRÄCH_FREUNDE" name="Gespräch mit vertrauter Person" category="social">
+    <targets>
+        Soziale Unterstützung aktivieren.
+        Gefühle teilen und entlasten.
+    </targets>
+
+    <indications>
+        Einsamkeit, Überforderung, Bedürfnis nach Austausch.
+    </indications>
+
+    <mechanism>
+        Soziale Unterstützung ist ein wichtiger Resilienzfaktor.
+        Geteilte Last wird oft als leichter erlebt.
+    </mechanism>
+
+    <steps>
+        1. Überlege, wer in deinem Umfeld vertrauenswürdig ist.
+        2. Nimm Kontakt auf und formuliere offen, dass du gerade jemanden zum Reden brauchst.
+        3. Teile in deinem Tempo, was gerade los ist.
+    </steps>
+
+    <variants>
+        Telefonat, Sprachnachricht, Chat, reales Treffen.
+    </variants>
+
+    <safety>
+        Bei sehr sensiblen Themen ggf. an professionelle Stellen wenden.
+    </safety>
+
+    <example_phrases>
+        „Vielleicht gibt es jemanden, dem du kurz schreiben oder den du anrufen könntest.“
+    </example_phrases>
+
+    <related_exercises>
+        FREUND_TREFFEN, RAT_EINHOLEN, TELEFONSEELSORGE
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="FREUND_TREFFEN" name="Freunde oder Bezugspersonen treffen" category="social">
+    <targets>
+        Verbundenheit und Unterstützung erleben.
+        Positive soziale Erfahrungen stärken.
+    </targets>
+
+    <indications>
+        Einsamkeit, Rückzug, depressive Verstimmung.
+    </indications>
+
+    <mechanism>
+        Direkter Kontakt kann emotionale Isolation durchbrechen.
+        Gemeinsame Aktivitäten aktivieren positive Emotionen.
+    </mechanism>
+
+    <steps>
+        1. Überlege, mit wem du dich sicher oder wohl fühlst.
+        2. Frage nach einem Treffen oder gemeinsamen Spaziergang.
+        3. Sei ehrlich, wie es dir gerade geht, soweit es sich stimmig anfühlt.
+    </steps>
+
+    <variants>
+        Kurze Treffen statt langer Verabredungen.
+        Gemeinsame Aktivität mit Struktur (z. B. Kochen, Spielen).
+    </variants>
+
+    <safety>
+        Bei toxischen Kontakten vorsichtig sein.
+    </safety>
+
+    <example_phrases>
+        „Vielleicht gibt es jemanden, den du sehen könntest – auch kurz – um nicht allein zu sein.“
+    </example_phrases>
+
+    <related_exercises>
+        GESPRÄCH_FREUNDE, RAT_EINHOLEN
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="PROF_HILFE" name="Professionelle Hilfe suchen" category="crisis">
+    <targets>
+        Zugang zu fachlicher Unterstützung.
+        Entlastung durch professionelle Begleitung.
+    </targets>
+
+    <indications>
+        Anhaltende starke Belastung, Verdacht auf psychische Erkrankung.
+        Wiederkehrende Krisen, die Alltag und Beziehungen deutlich beeinträchtigen.
+    </indications>
+
+    <mechanism>
+        Therapeutische und ärztliche Hilfe bietet Diagnostik, Behandlung und Begleitung.
+    </mechanism>
+
+    <steps>
+        1. Informiere dich über Hilfsangebote (Hausarzt, Psychotherapie, Beratungsstellen).
+        2. Vereinbare einen Termin oder lasse dich beraten.
+    </steps>
+
+    <variants>
+        Hausarzt, Psychotherapeut, Sozialpsychiatrischer Dienst, Beratungsstellen.
+    </variants>
+
+    <safety>
+        Keine Kontraindikation – dies ist eine Empfehlung, kein Ersatz für ärztliche Diagnostik.
+    </safety>
+
+    <example_phrases>
+        „Das, was du beschreibst, klingt nach etwas, das professionelle Unterstützung verdient.“
+    </example_phrases>
+
+    <related_exercises>
+        TELEFONSEELSORGE, RAT_EINHOLEN
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="TELEFONSEELSORGE" name="Telefonseelsorge / Krisentelefon kontaktieren" category="crisis">
+    <targets>
+        Akute Entlastung in schwierigen Situationen.
+        Niedrigschwelliger Zugang zu Unterstützung.
+    </targets>
+
+    <indications>
+        Krisen, Einsamkeit, Verzweiflung.
+    </indications>
+
+    <mechanism>
+        Anonyme, kostenfreie Gespräche mit geschulten Personen bieten Entlastung und Orientierung.
+    </mechanism>
+
+    <steps>
+        1. Suche die Telefonnummer eines Krisentelefons in deinem Land (z. B. Telefonseelsorge).
+        2. Wähle die Nummer und bleibe dran, auch wenn es Überwindung kostet.
+        3. Teile, was du möchtest – du bestimmst das Tempo.
+    </steps>
+
+    <variants>
+        Chat- oder Mailberatung, falls vorhanden.
+    </variants>
+
+    <safety>
+        Wichtig bei akuter Suizidalität oder massiver Überforderung.
+    </safety>
+
+    <example_phrases>
+        „Wenn es sich sehr schwer anfühlt, könntest du mit der Telefonseelsorge sprechen – anonym und kostenfrei.“
+    </example_phrases>
+
+    <related_exercises>
+        PROF_HILFE, GESPRÄCH_FREUNDE
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="RAT_EINHOLEN" name="Rat einholen" category="social">
+    <targets>
+        Entlastung bei Entscheidungen.
+        Perspektiven anderer einbeziehen.
+    </targets>
+
+    <indications>
+        Entscheidungsdruck, Unsicherheit, Überforderung.
+    </indications>
+
+    <mechanism>
+        Perspektiven anderer können blinde Flecken aufdecken.
+        Das Aussprechen der Situation klärt oft schon einiges.
+    </mechanism>
+
+    <steps>
+        1. Wähle eine Person, deren Urteil du schätzt.
+        2. Beschreibe die Situation möglichst klar.
+        3. Bitte um Rückmeldung oder Einschätzung.
+    </steps>
+
+    <variants>
+        Mehrere Personen um Perspektive bitten.
+    </variants>
+
+    <safety>
+        Eigene Verantwortung bleibt bei dir – Rat ist Unterstützung, keine Pflicht.
+    </safety>
+
+    <example_phrases>
+        „Manchmal hilft es, bewusst jemanden um Rat zu fragen, statt alles allein zu drehen.“
+    </example_phrases>
+
+    <related_exercises>
+        GESPRÄCH_FREUNDE, FREUND_TREFFEN, PROBLEMLÖSUNG
+    </related_exercises>
+</exercise>
+
+
+
+<exercise id="ABLENKUNG_PERSONEN" name="Ablenkung durch Menschen" category="social">
+    <targets>
+        Kurzfristige Entlastung von Grübeln und schweren Gefühlen.
+        Aktivierung von Kontakt und Alltag.
+    </targets>
+
+    <indications>
+        Starke Grübelneigung, depressive Stimmung, Einsamkeit.
+    </indications>
+
+    <mechanism>
+        Kontakt zu anderen kann Aufmerksamkeit umlenken und positive Reize setzen.
+    </mechanism>
+
+    <steps>
+        1. Überlege, mit wem du Zeit verbringen könntest, ohne tief über Probleme zu sprechen.
+        2. Frage nach einer gemeinsamen Aktivität (z. B. Film, Spiel, Spaziergang).
+    </steps>
+
+    <variants>
+        Online-Kontakt, Spieleabende, gemeinsames Kochen.
+    </variants>
+
+    <safety>
+        Ablenkung ersetzt keine langfristige Auseinandersetzung mit Problemen.
+    </safety>
+
+    <example_phrases>
+        „Du könntest jemanden fragen, ob ihr einfach etwas Alltägliches zusammen machen wollt – ohne großes Thema.“
+    </example_phrases>
+
+    <related_exercises>
+        FREUND_TREFFEN, DANKBARKEIT
+    </related_exercises>
+</exercise>
+
+
+    <exercise id="REFRAMING" name="Reframing (kognitive Neubewertung)" category="cognitive">
+        <targets>
+            Neue Perspektiven auf schwierige Situationen finden.
+            Selbstwirksamkeit und Hoffnung stärken.
+            Negative Gedankenschleifen durch alternative Bewertungen reduzieren.
+        </targets>
+
+        <indications>
+            Negative Gedankenschleifen, Hilflosigkeit, festgefahrene Sichtweisen.
+            Selbstzweifel, Scham oder belastende Rückblicke.
+            Situationen, in denen mentale Flexibilität gebraucht wird.
+        </indications>
+
+        <mechanism>
+            Kognitive Umstrukturierung verändert die emotionale Bewertung einer Situation.
+            Präfrontale Verarbeitung erhöht Distanz und Klarheit.
+            Neubewertung stärkt innere Flexibilität, Kontrolle und Selbstwirksamkeit.
+        </mechanism>
+
+        <steps>
+            1. Benenne klar die belastende Situation oder den Gedanken.
+            2. Frage dich: „Gibt es eine andere mögliche Sichtweise?“
+            3. Sammle 1–3 alternative Deutungen – realistisch, nicht schönfärbend.
+            4. Formuliere einen neuen, hilfreicheren Gedanken.
+            5. Spüre nach, ob sich Haltung oder Gefühl minimal verändert.
+        </steps>
+
+        <variants>
+            Zeitreise-Reframing („Wie sehe ich das in 5 Jahren?“).
+            Humor-Reframing zur Entlastung.
+            Reframing im Gespräch mit einer vertrauten Person.
+        </variants>
+
+        <safety>
+            Nicht in akuter Krise als Hauptintervention nutzen – zuerst Stabilisierung.
+            Nicht nutzen, um echte Probleme kleinzureden oder zu verharmlosen.
+        </safety>
+
+        <example_phrases>
+            „Was könnte neben deinem aktuellen Gedanken auch noch wahr sein?“
+            „Wie würdest du das sehen, wenn du liebevoll auf dich schaust?“
+        </example_phrases>
+
+        <related_exercises>
+            GLAUBENSSATZARBEIT, DANKBARKEIT, SELBSTGESPRÄCH
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="GLAUBENSSATZARBEIT" name="Glaubenssatzarbeit" category="cognitive">
+        <targets>
+            Blockierende innere Muster erkennen.
+            Unterstützende, konstruktive Selbstbilder aufbauen.
+            Innere Freiheit und Selbstwirksamkeit fördern.
+        </targets>
+
+        <indications>
+            Selbstzweifel, wiederkehrende Scham oder Angst.
+            Starre Überzeugungen wie „Ich bin nicht gut genug“.
+            Innere Sprache, die stark belastend wirkt.
+        </indications>
+
+        <mechanism>
+            Neue Überzeugungen fördern neuronale Plastizität und alternative Denkwege.
+            Innere Sprache prägt Emotionen und Selbstwahrnehmung.
+            Umbewertung reduziert innere Blockaden und stärkt Selbstwirksamkeit.
+        </mechanism>
+
+        <steps>
+            1. Identifiziere einen belastenden Satz über dich (z. B. „Ich darf keine Schwäche zeigen“).
+            2. Frage dich: Woher kommt dieser Satz? Wem gehört er ursprünglich?
+            3. Prüfe: Ist er wirklich wahr und hilfreich?
+            4. Formuliere einen neuen, unterstützenden Satz (z. B. „Ich darf Unterstützung brauchen“).
+            5. Wiederhole den neuen Satz regelmäßig – laut, innerlich oder schriftlich.
+        </steps>
+
+        <variants>
+            Arbeit mit Karten oder Post-its (alter vs. neuer Glaubenssatz).
+            Spiegelarbeit: neuen Satz vor dem Spiegel sprechen.
+            Einbinden in Journaling oder Reflektionsübungen.
+        </variants>
+
+        <safety>
+            Nicht in akuter Krise – zuerst Stabilisierung und Sicherheit.
+            Tiefe Themen ggf. nur mit therapeutischer Begleitung.
+        </safety>
+
+        <example_phrases>
+            „Welcher Satz über dich tut dir immer wieder weh?“
+            „Wie könnte ein Satz klingen, der dich stärkt statt klein macht?“
+        </example_phrases>
+
+        <related_exercises>
+            REFRAMING, JOURNAL, INNERER_SICHERER_ORT
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="WIRKLICH_WICHTIG" name="Was ist wirklich wichtig? (Priorisierung & Klarheit)" category="cognitive">
+        <targets>
+            Rückbesinnung auf zentrale Werte.
+            Sortierung bei Überforderung und Entscheidungsdruck.
+            Handlungsfähigkeit durch Klarheit wiederherstellen.
+        </targets>
+
+        <indications>
+            Chaos, mentale Überforderung, Grübeln, Unsicherheit.
+            Viele parallele Aufgaben oder „Baustellen“.
+            Orientierungslosigkeit bezüglich Prioritäten.
+        </indications>
+
+        <mechanism>
+            Wertefokus beruhigt das Nervensystem und bündelt Aufmerksamkeit.
+            Klarheit reduziert Entscheidungsstress.
+            Priorisierung stärkt Selbstwirksamkeit und Handlungskompetenz.
+        </mechanism>
+
+        <steps>
+            1. Halte inne und frage dich: „Was ist mir jetzt wirklich wichtig?“
+            2. Notiere 1–3 Dinge (Personen, Werte, Aufgaben).
+            3. Lege fest, was heute / jetzt Vorrang hat.
+            4. Entlasse bewusst 1–2 Dinge, die heute NICHT wichtig sind.
+        </steps>
+
+        <variants>
+            Übung schriftlich als Liste.
+            Austausch mit vertrauter Person zur Werteklärung.
+            Kombination mit Visualisierung (z. B. inneres Bild eines Kompasses).
+        </variants>
+
+        <safety>
+            Nicht als zusätzlichen Druck oder To-do-Liste missbrauchen.
+            Fokus auf Entlastung und Orientierung, nicht Perfektion.
+        </safety>
+
+        <example_phrases>
+            „Was zählt heute wirklich – für dich?“
+            „Wenn du nur einer Sache Raum gibst: welche wäre das?“
+        </example_phrases>
+
+        <related_exercises>
+            NEUAUSRICHTUNG, REFRAMING, DANKBARKEIT, SELBSTGESPRÄCH
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="NEUAUSRICHTUNG" name="Neuausrichtung (Zielklärung & Kurswechsel)" category="cognitive">
+        <targets>
+            Aus dem Autopiloten aussteigen.
+            Neue Orientierung und Motivation aktivieren.
+            Kurs anpassen nach Phasen der Unsicherheit oder Stagnation.
+        </targets>
+
+        <indications>
+            Gefühl des Feststeckens, Frustration, Orientierungslosigkeit.
+            Übergänge, Umbrüche oder Neustartphasen.
+            Wunsch nach Veränderung, aber unklare Richtung.
+        </indications>
+
+        <mechanism>
+            Zielorientierung aktiviert das Belohnungssystem und steigert Antrieb.
+            Struktur und Planung geben Halt.
+            Bewusste Intentionalität reduziert Ohnmachtsgefühle.
+        </mechanism>
+
+        <steps>
+            1. Frage dich: „Wohin will ich wirklich – in diesem Bereich meines Lebens?“
+            2. Formuliere ein kleines, realistisches Ziel (nächste 7–14 Tage).
+            3. Lege 1–3 konkrete erste Schritte fest.
+            4. Bestimme, wann du den ersten Schritt machst (konkreter Zeitpunkt).
+        </steps>
+
+        <variants>
+            Visionboard oder kleine Zukunftsskizzen erstellen.
+            Plan mit einer vertrauten Person teilen.
+            Kombination mit NATUR oder JOURNAL, um Klarheit zu vertiefen.
+        </variants>
+
+        <safety>
+            Nicht als Druckinstrument („Ich muss sofort alles ändern“) nutzen.
+            Fokus auf kleine, machbare Schritte.
+        </safety>
+
+        <example_phrases>
+            „Was wäre ein nächster, kleiner, realistischer Schritt?“
+            „Wozu möchtest du dich jetzt neu ausrichten?“
+        </example_phrases>
+
+        <related_exercises>
+            WIRKLICH_WICHTIG, REFRAMING, JOURNAL
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="OPTIMISMUS" name="Optimismus (positive Zukunftserwartung kultivieren)" category="cognitive">
+        <targets>
+            Hoffnung und Zuversicht stärken.
+            Positive, tragfähige Zukunftsbilder aktivieren.
+            Resilienz in belastenden Phasen fördern.
+        </targets>
+
+        <indications>
+            Pessimismus, depressive Stimmung, Zukunftsangst.
+            Rückschläge, Frust, Erschöpfung.
+            Gefühl, dass „alles sinnlos“ ist oder sich „nichts lohnt“.
+        </indications>
+
+        <mechanism>
+            Positive Zukunftserwartung aktiviert das Belohnungssystem.
+            Innere Bilder von Gelingen steigern Motivation.
+            Hoffnung wirkt als emotionaler Schutzfaktor.
+        </mechanism>
+
+        <steps>
+            1. Wähle eine konkrete kommende Situation (heute, diese Woche).
+            2. Formuliere 1–2 Dinge, die gut laufen könnten.
+            3. Stelle dir kurz vor, dass genau das eintritt (Bild, Szene, Gefühl).
+            4. Wiederhole diese Übung an mehreren Tagen.
+        </steps>
+
+        <variants>
+            Kombination mit Zeichnen oder Collagen.
+            Nutzung von Musik zur Verstärkung der inneren Bilder.
+        </variants>
+
+        <safety>
+            Kein Zwang zum „positiv Denken“.
+            Realistische, glaubwürdige Szenarien wählen.
+        </safety>
+
+        <example_phrases>
+            „Was könnte – auch ganz klein – gut laufen?“
+            „Wie sähe ein etwas besserer Tag morgen aus?“
+        </example_phrases>
+
+        <related_exercises>
+            DANKBARKEIT, NEUAUSRICHTUNG, REFRAMING
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="PROBLEMLÖSUNG" name="Problemlösung (strukturierte Herangehensweise)" category="cognitive">
+        <targets>
+            Konkrete Herausforderungen bearbeiten.
+            Handlungsfähigkeit und Klarheit stärken.
+            Stress durch Struktur reduzieren.
+        </targets>
+
+        <indications>
+            Entscheidungsprobleme, Blockaden, wiederkehrende Sorgen.
+            Komplexe Aufgaben ohne Plan.
+            Gefühl von Kontrollverlust.
+        </indications>
+
+        <mechanism>
+            Strukturierte Planung reduziert diffuse Angst.
+            Fokus auf Handlung statt Grübeln stärkt Selbstwirksamkeit.
+        </mechanism>
+
+        <steps>
+            1. Benenne das Problem in einem Satz.
+            2. Sammle alle möglichen Lösungen (Brainstorming ohne Bewertung).
+            3. Bewerte die Optionen nach Realismus und Nutzen.
+            4. Wähle eine Option und definiere den ersten kleinen Schritt.
+            5. Setze diesen Schritt um und überprüfe die Wirkung.
+        </steps>
+
+        <variants>
+            Problemlösung gemeinsam mit einer vertrauten Person.
+            Visualisierung als Mindmap oder Liste.
+        </variants>
+
+        <safety>
+            Nicht nutzen, um Gefühle zu umgehen – zuerst Emotionen anerkennen.
+        </safety>
+
+        <example_phrases>
+            „Wir können das Problem in klare, kleine Schritte runterbrechen.“
+            „Was wäre eine erste machbare Aktion – ganz klein gedacht?“
+        </example_phrases>
+
+        <related_exercises>
+            JOURNAL, WIRKLICH_WICHTIG, NEUAUSRICHTUNG
+        </related_exercises>
+    </exercise>
+
+
+    <exercise id="SELBSTGESPRÄCH" name="Selbstgespräche führen" category="cognitive">
+        <targets>
+            Selbstklärung durch Aussprechen.
+            Innere Fürsorge und Selbstmitgefühl aktivieren.
+            Grübelschleifen unterbrechen.
+        </targets>
+
+        <indications>
+            Unsicherheit, Stress, innere Unruhe.
+            Entscheidungsdruck, Gefühl festzustecken.
+        </indications>
+
+        <mechanism>
+            Lautes oder inneres Sprechen bringt Gedanken in Ordnung.
+            Perspektivwechsel („innerer Freund“) schafft hilfreiche Distanz.
+        </mechanism>
+
+        <steps>
+            1. Zieh dich an einen ruhigen Ort zurück.
+            2. Sprich aus, was du denkst oder fühlst – laut, leise oder flüsternd.
+            3. Wechsle bewusst in die Rolle eines wohlwollenden inneren Freundes.
+            4. Antworte dir so, wie du einer nahen Person antworten würdest.
+        </steps>
+
+        <variants>
+            Dialog schriftlich als Zwiegespräch.
+            Innerer Dialog vor dem Spiegel.
+        </variants>
+
+        <safety>
+            Nicht geeignet bei akuten Psychosen oder Stimmenhören.
+        </safety>
+
+        <example_phrases>
+            „Stell dir vor, du sprichst mit dir wie mit einem guten Freund.“
+        </example_phrases>
+
+        <related_exercises>
+            REFRAMING, WAS_WUERDE_XY_TUN, JOURNAL
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="DANKBARKEIT" name="Dankbarkeit (Ressourcenfokus & Positivität)" category="emotion">
+        <targets>
+            Aufmerksamkeit auf Gelungenes und Positives lenken.
+            Verbundenheit, Zufriedenheit und Stabilität fördern.
+            Wohlbefinden als Gegengewicht zu Belastung aktivieren.
+        </targets>
+
+        <indications>
+            Pessimismus, Enttäuschung, Sinnkrisen.
+            Emotionale Leere, Unzufriedenheit, fehlende Verbundenheit.
+        </indications>
+
+        <mechanism>
+            Fokus auf Positives stärkt Resilienz.
+            Dankbarkeit aktiviert Belohnungs- und Bindungssysteme.
+        </mechanism>
+
+        <steps>
+            1. Notiere drei Dinge, für die du heute dankbar bist – groß oder klein.
+            2. Lies sie dir langsam vor.
+            3. Spüre kurz nach, wie es sich anfühlt.
+        </steps>
+
+        <variants>
+            Dankbarkeitstagebuch.
+            Abends 1 Highlight des Tages.
+            Jemandem bewusst Danke sagen.
+        </variants>
+
+        <safety>
+            Nicht als Zwang („sei dankbar!“) benutzen.
+            Schmerz darf parallel existieren.
+        </safety>
+
+        <example_phrases>
+            „Wofür bist du heute – auch im Kleinen – dankbar?“
+        </example_phrases>
+
+        <related_exercises>
+            OPTIMISMUS, REFRAMING, JOURNAL
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="RADIKALE_AKZEPTANZ" name="Radikale Akzeptanz (Realität vollständig annehmen)" category="emotion">
+        <targets>
+            Aufhören, gegen die Realität anzukämpfen.
+            Innere Ruhe durch Akzeptanz und Selbstmitgefühl fördern.
+            Entlastung bei nicht veränderbaren Situationen.
+        </targets>
+
+        <indications>
+            Hoher innerer Widerstand, „es darf nicht so sein“.
+            Situationen, die faktisch nicht veränderbar sind.
+            Erschöpfung durch ständiges inneres Kämpfen.
+        </indications>
+
+        <mechanism>
+            Akzeptanz reduziert inneren Druck und Stress.
+            Realitätsannahme schafft Energie für sinnvolle Schritte.
+        </mechanism>
+
+        <steps>
+            1. Benenne, was du gerade ablehnst („Ich will nicht, dass ...“).
+            2. Sage dir: „Es ist im Moment so – auch wenn es mir nicht gefällt.“
+            3. Atme durch den Widerstand hindurch.
+            4. Halte für einen Moment inne, ohne etwas zu verändern.
+        </steps>
+
+        <variants>
+            Schriftliche Akzeptanzsätze.
+            Visualisierung (Fluss, in den Dinge hineingegeben werden).
+        </variants>
+
+        <safety>
+            Nicht als Ausrede nutzen, in schädlichen Situationen zu bleiben.
+            Akzeptanz ersetzt nicht notwendige Schutz- oder Veränderungsschritte.
+        </safety>
+
+        <example_phrases>
+            „Akzeptieren heißt nicht gutheißen – sondern anerkennen, dass es gerade so ist.“
+        </example_phrases>
+
+        <related_exercises>
+            REFRAMING, ATMUNG, INNERER_SICHERER_ORT, DANKBARKEIT
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="WAS_WUERDE_XY_TUN" name="Was würde XY jetzt tun? (mentales Modell nutzen)" category="cognitive">
+        <targets>
+            Orientierung durch eine innere Vorbildfigur.
+            Handlungsspielraum erweitern.
+            Zugang zu ressourcenstarken Haltungen.
+        </targets>
+
+        <indications>
+            Unsicherheit, Angst, Überforderung.
+            Selbstkritische, blockierende Gedankenmuster.
+        </indications>
+
+        <mechanism>
+            Perspektivübernahme aktiviert neue Denkpfade.
+            Identifikation mit einer stärkeren Figur stärkt Ressourcen.
+        </mechanism>
+
+        <steps>
+            1. Wähle eine reale oder fiktive Figur, die du bewunderst.
+            2. Frage dich: „Was würde diese Person jetzt tun oder sagen?“
+            3. Höre innerlich hin und stelle dir die Haltung / Reaktion vor.
+        </steps>
+
+        <variants>
+            Zukunfts-Ich als Figur nutzen.
+            Symbol (Armband, Bild) als Anker.
+        </variants>
+
+        <safety>
+            Nicht zur Selbstabwertung („XY wäre besser als ich“) benutzen.
+        </safety>
+
+        <example_phrases>
+            „Was würde dein innerer Mentor dir gerade raten?“
+        </example_phrases>
+
+        <related_exercises>
+            SELBSTGESPRÄCH, INNERER_SICHERER_ORT, IMAGINATION
+        </related_exercises>
+    </exercise>
+
+
+
+    <exercise id="RITUALE_STRUKTUREN" name="Rituale und Strukturen (Stabilisierung durch Wiederholung)" category="regulation">
+        <targets>
+            Halt und Orientierung im Alltag schaffen.
+            Vorhersehbarkeit zur Beruhigung nutzen.
+            Stabilisierung in belastenden oder chaotischen Phasen.
+        </targets>
+
+        <indications>
+            Chaos, Unsicherheit, emotionale Instabilität.
+            Rückfallphasen, Neuorientierung, Alltagsüberforderung.
+        </indications>
+
+        <mechanism>
+            Wiederholungen aktivieren Sicherheitsnetzwerke im Gehirn.
+            Struktur senkt Entscheidungsmüdigkeit und kognitive Last.
+        </mechanism>
+
+        <steps>
+            1. Wähle eine kleine, wohltuende Handlung (z. B. Tee am Morgen).
+            2. Lege eine feste Tageszeit fest.
+            3. Wiederhole das Ritual mehrere Tage.
+            4. Beobachte Wirkung und passe bei Bedarf an.
+        </steps>
+
+        <variants>
+            Morgen- oder Abendrituale.
+            Wöchentliche Check-ins, Spaziergänge, Journaling-Zeit.
+        </variants>
+
+        <safety>
+            Bei Tendenz zu Zwang oder Perfektionismus flexibel bleiben.
+        </safety>
+
+        <example_phrases>
+            „Welche kleine, wiederkehrende Handlung könnte dir Halt geben?“
+        </example_phrases>
+
+        <related_exercises>
+            PAUSE_AKTIV, NATUR, ATMUNG, DANKBARKEIT
+        </related_exercises>
+    </exercise>

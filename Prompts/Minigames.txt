@@ -1,0 +1,216 @@
+##Minigames
+<!--
+SCHEMA: minigame
+root: <minigames>…</minigames>
+
+<minigame id="INT" name="STRING">
+    <prompt>TEXT (eine kurze, klar formulierte User-Aufgabe)</prompt>
+</minigame>
+
+Constraints:
+- id: required, integer, unique im gesamten File.
+- name: required, kurzer beschreibender Name.
+- prompt: required, 1–2 Sätze, direkt adressiert an den User.
+-->
+
+<minigames>
+    <minigame id="1" name="7-Wörter-Fokus">
+        <prompt>Formuliere in genau 7 Wörtern deinen nächsten Schritt.</prompt>
+    </minigame>
+
+    <minigame id="2" name="10-Sekunden-Pause">
+        <prompt>Atme einmal tief ein und aus. Welches Wort bleibt?</prompt>
+    </minigame>
+
+    <minigame id="3" name="Der Störenfried">
+        <prompt>Welcher Gedanke lenkt dich gerade ab? Ein Wort.</prompt>
+    </minigame>
+
+    <minigame id="4" name="Ein Punkt">
+        <prompt>Beende diesen Satz mit einem Wort: Heute brauche ich…</prompt>
+    </minigame>
+
+    <minigame id="5" name="Minimalisieren">
+        <prompt>Sag dein wichtigstes Anliegen in max. 5 Wörtern.</prompt>
+    </minigame>
+
+    <minigame id="6" name="Prioritäten-Check">
+        <prompt>Wenn du nur EINE Sache tun dürftest… welche wäre es?</prompt>
+    </minigame>
+
+    <minigame id="7" name="Fokus-Split">
+        <prompt>Was ist heute NICHT wichtig? Ein Punkt.</prompt>
+    </minigame>
+
+    <minigame id="8" name="Noise Filter">
+        <prompt>Welche Info belastet dich gerade? Ein Wort.</prompt>
+    </minigame>
+
+    <minigame id="9" name="Klarheits-Schalter">
+        <prompt>Worauf willst du JETZT deine Aufmerksamkeit richten?</prompt>
+    </minigame>
+
+    <minigame id="10" name="Time Guess">
+        <prompt>Wie viele Minuten fühlst du dich heute schon gestresst?</prompt>
+    </minigame>
+
+    <minigame id="11" name="1-Satz-Erkenntnis">
+        <prompt>Was hast du gerade über dich gelernt?</prompt>
+    </minigame>
+
+    <minigame id="12" name="Zukunftssatz">
+        <prompt>Formuliere einen Satz aus Sicht deines Morgen-Ichs.</prompt>
+    </minigame>
+
+    <minigame id="13" name="Metapher-Maker">
+        <prompt>Welche Metapher beschreibt deine Situation?</prompt>
+    </minigame>
+
+    <minigame id="14" name="3 gute Gründe">
+        <prompt>Nenne drei Gründe, warum du heute weitermachst.</prompt>
+    </minigame>
+
+    <minigame id="15" name="Story-Start">
+        <prompt>Vervollständige: Wenn Ruhe sprechen könnte…</prompt>
+    </minigame>
+
+    <minigame id="16" name="Mini-These">
+        <prompt>Warum fühlst du dich so? Eine These.</prompt>
+    </minigame>
+
+    <minigame id="17" name="Perspektivtausch">
+        <prompt>Was würde ein guter Freund dir jetzt sagen?</prompt>
+    </minigame>
+
+    <minigame id="18" name="3-Wort-Strategie">
+        <prompt>Fasse deine Strategie in drei Worten zusammen.</prompt>
+    </minigame>
+
+    <minigame id="19" name="Ein Problem – drei Möglichkeiten">
+        <prompt>Welche drei Wege hast du?</prompt>
+    </minigame>
+
+    <minigame id="20" name="Der kleinste Schritt">
+        <prompt>Was wäre der kleinstmögliche Schritt?</prompt>
+    </minigame>
+
+    <minigame id="21" name="Emotion benennen">
+        <prompt>Welches Gefühl ist gerade am stärksten?</prompt>
+    </minigame>
+
+    <minigame id="22" name="Der freundliche Satz">
+        <prompt>Sag dir einen freundlichen Satz.</prompt>
+    </minigame>
+
+    <minigame id="23" name="Körperkompass">
+        <prompt>Wo im Körper spürst du am meisten?</prompt>
+    </minigame>
+
+    <minigame id="24" name="30-Sekunden-Lichtblick">
+        <prompt>Was war dein letzter Lichtblick?</prompt>
+    </minigame>
+
+    <minigame id="25" name="Temperatur-Check">
+        <prompt>Welches Wort beschreibt deine innere Temperatur?</prompt>
+    </minigame>
+
+    <minigame id="26" name="Vom Sturm zur Brise">
+        <prompt>Wenn deine Stimmung ein Wetter wäre…?</prompt>
+    </minigame>
+
+    <minigame id="27" name="Die sanfte Frage">
+        <prompt>Was brauchst du gerade wirklich?</prompt>
+    </minigame>
+
+    <minigame id="28" name="3 kleine Dankbarkeiten">
+        <prompt>Was waren drei kleine gute Dinge?</prompt>
+    </minigame>
+
+    <minigame id="29" name="Emotion des Tages">
+        <prompt>Welche Emotion möchtest du heute kultivieren?</prompt>
+    </minigame>
+
+    <minigame id="30" name="Mini-Reframing">
+        <prompt>Wie könntest du denselben Gedanken hilfreicher formulieren?</prompt>
+    </minigame>
+
+    <minigame id="31" name="Rückfrage des Tages">
+        <prompt>Was war gestern dein wichtigster Satz?</prompt>
+    </minigame>
+
+    <minigame id="32" name="Wochen-Anker">
+        <prompt>Welcher Satz wirkt aus dieser Woche noch nach?</prompt>
+    </minigame>
+
+    <minigame id="33" name="Variation Game">
+        <prompt>Mach aus einer alten Erkenntnis eine neue.</prompt>
+    </minigame>
+
+    <minigame id="34" name="Erinnerungsversion">
+        <prompt>Was würdest du deinem Gestern-Ich raten?</prompt>
+    </minigame>
+
+    <minigame id="35" name="Insight wiederholen">
+        <prompt>Sag deinen stärksten Satz noch einmal.</prompt>
+    </minigame>
+
+    <minigame id="36" name="Fortschritt messen">
+        <prompt>Wie stark bist du (1–10)?</prompt>
+    </minigame>
+
+    <minigame id="37" name="Gestern → Heute">
+        <prompt>Was ist seit gestern besser geworden?</prompt>
+    </minigame>
+
+    <minigame id="38" name="Muster erkennen">
+        <prompt>Welche zwei Themen tauchen immer wieder auf?</prompt>
+    </minigame>
+
+    <minigame id="39" name="Wiederholung in einem Wort">
+        <prompt>Nenne ein Wort aus dem letzten Gespräch.</prompt>
+    </minigame>
+
+    <minigame id="40" name="Rückblick in fünf Wörtern">
+        <prompt>Beschreibe deine Woche in fünf Wörtern.</prompt>
+    </minigame>
+
+    <minigame id="41" name="Mentale Landkarte">
+        <prompt>Nenne drei Begriffe für deine Innenwelt.</prompt>
+    </minigame>
+
+    <minigame id="42" name="Der Kern">
+        <prompt>Was ist der Kern deines Problems?</prompt>
+    </minigame>
+
+    <minigame id="43" name="Insight-Generator">
+        <prompt>Was wäre eine ungewohnte Perspektive hier?</prompt>
+    </minigame>
+
+    <minigame id="44" name="Schnell-Entscheidung">
+        <prompt>Wenn du dich jetzt entscheiden müsstest…?</prompt>
+    </minigame>
+
+    <minigame id="45" name="10-Sekunden-Resilienz">
+        <prompt>Ich halte das aus, weil…?</prompt>
+    </minigame>
+
+    <minigame id="46" name="Selbstberatung">
+        <prompt>Was würdest du deinem 12-jährigen Ich raten?</prompt>
+    </minigame>
+
+    <minigame id="47" name="Ressourcen-Check">
+        <prompt>Welche drei Stärken kannst du heute nutzen?</prompt>
+    </minigame>
+
+    <minigame id="48" name="Frage an die Zukunft">
+        <prompt>Welche Frage hast du an dein Zukunfts-Ich?</prompt>
+    </minigame>
+
+    <minigame id="49" name="Der Anti-Gedanke">
+        <prompt>Welchen Gedanken willst du heute nicht denken?</prompt>
+    </minigame>
+
+    <minigame id="50" name="Aha des Tages">
+        <prompt>Was ist heute dein wichtigster Aha-Moment?</prompt>
+    </minigame>
+</minigames>
